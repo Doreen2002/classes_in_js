@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="h" style="background-color: aqua;"></h1>
+    <script>
+        class Employer
+        {
+            constructor (nameEplyee,sala,emplyer)
+            {
+                this.emplyeename=nameEplyee;
+                this.salarly=sala;
+                this.employer=emplyer;
+                
+            }
+            checksalary=()=>
+            {
+                if(this.salarly<400)
+                {
+                    document.write(" your salary is low"); 
+                }
+                else{
+                    document.write("your salary is high")
+                }
+            }
+        }
+        class Employed extends Employer
+        {
+            constructor(nameEplyee,sala,emplyer)
+            {
+                super(nameEplyee,sala,emplyer);
+
+        
+            }
+            display=()=>
+            {
+                return  this.salarly+ " is salary for "+ this.emplyeename+" employed by"+this.employer;
+            }
+        }
+        emplo1=new Employed('doreen',300,"Bank");
+       document.getElementById("h").innerHTML=emplo1.display();
+       emplo1.checksalary();
+    </script>
+</body>
+</html>
